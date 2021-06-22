@@ -18,5 +18,5 @@ export default () => {
 
     connnection.once('open', () => {
         console.log('Database connected');
-    })
+    });
 };
