@@ -1,15 +1,32 @@
-import Express from "express";
-import ConnectDB from "./services/MongoDB";
-import FileRouter from './routes/files';
+import path from "path";
 
-const app = Express();
+import express from "express";
+
+import ConnectDB from "./services/MongoDB";
+import HomeRouter from './routes/home';
+import FileRouter from './routes/files';
+import ShowRouter from './routes/show';
+import DownloadRouter from './routes/download';
+
+const app = express();
 const PORT: string | number = process.env.PORT || 3000;
 
 ConnectDB();
 
-app.use('/api/files', FileRouter)
+
+app.set('views', path.join(__dirname, '/views'));
+app.set('view engine', 'ejs');
+
+
+app.use(express.static(__dirname + '/public'));
+app.use(express.json());
+
+app.use('/', HomeRouter);
+app.use('/api/files', FileRouter);
+app.use('/files', ShowRouter);
+app.use('/files/download', DownloadRouter);
 
 
 app.listen(PORT, () => {
-    console.log(`Serving @${PORT}`)
+    console.log(`Serving @${PORT}`);
 });

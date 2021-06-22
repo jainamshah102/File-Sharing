@@ -1,8 +1,16 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema, Document, model, Model } from 'mongoose';
 
-const Schema = mongoose.Schema;
 
-const fileSchema = new Schema({
+interface IFileSchema extends Document {
+    filename: string;
+    path: string;
+    size: number;
+    uuid: string;
+    sender?: string;
+    receiver?: string;
+}
+
+const fileSchema: Schema = new Schema({
     filename: {
         type: String,
         required: true
@@ -31,5 +39,6 @@ const fileSchema = new Schema({
     timestamps: true
 });
 
+const File: Model<IFileSchema> = model('File', fileSchema);
 
-export default mongoose.model('File', fileSchema);
+export default File
