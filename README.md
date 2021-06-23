@@ -12,12 +12,12 @@ Simple file sharing web app with drag and drop file upload.
 
 ## Technologies
 
-- [Typescript](https://www.typescriptlang.org/): Version 4.3.4
-- [Node](https://nodejs.org/): Version 14.16.0
-- [Express](https://expressjs.com/): Version 4.17.1
-- [MongoDB](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/): Version 5.12.14
-- [EJS](https://ejs.co/): Version 3.1.6
+-   [Typescript](https://www.typescriptlang.org/): Version 4.3.4
+-   [Node](https://nodejs.org/): Version 14.16.0
+-   [Express](https://expressjs.com/): Version 4.17.1
+-   [MongoDB](https://www.mongodb.com/)
+-   [Mongoose](https://mongoosejs.com/): Version 5.12.14
+-   [EJS](https://ejs.co/): Version 3.1.6
 
 ## Installation
 
@@ -37,4 +37,6 @@ $ npm i -g nodemon
 $ npm run dev
 ```
 
+<p align="center">
 Made with 💖 by Jainam Shah
+</p>
