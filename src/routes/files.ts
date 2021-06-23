@@ -30,6 +30,7 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
 
+    // @ts-ignore
     upload(req, res, async (err) => {
 
         // console.log(req.file);
