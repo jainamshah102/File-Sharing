@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 
     upload(req, res, async (err) => {
 
-        console.log(req.files);
+        // console.log(req.file);
         if (err) {
             return res.status(500).send({
                 error: err.message
@@ -46,8 +46,12 @@ router.post('/', (req, res) => {
             size: req.file?.size
         });
 
+
         const response = await file.save();
-        return res.json({
+
+        // console.log(`${process.env.APP_BASE_URL}/files/${response.uuid}`)
+
+        return res.status(200).json({
             file: `${process.env.APP_BASE_URL}/files/${response.uuid}`
         });
     });

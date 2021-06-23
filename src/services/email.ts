@@ -15,12 +15,13 @@ export default async ({
         }
     });
 
-    console.log(transporter);
+    try {
+        const info = await transporter.sendMail({
+            from: `inShare <${from}>`,
+            to, subject, text, html
+        });
+    } catch (err) {
 
-    const info = await transporter.sendMail({
-        from: `inShare <${from}>`,
-        to, subject, text, html
-    });
+    }
 
-    console.log(info);
 };

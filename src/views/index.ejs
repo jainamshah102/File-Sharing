@@ -11,7 +11,7 @@
     <body>
         <img src="/img/logo.png" alt="Inshare logo" class="logo" />
         <section class="upload-container">
-            <form action="">
+            <form action="POST">
                 <div class="drop-zone">
                     <div class="icon-container">
                         <img
@@ -96,6 +96,7 @@
         </section>
         <div class="image-vector"></div>
         <div class="toast">Sample message</div>
+
         <script>
             const dropZone = document.querySelector(".drop-zone");
             const fileInput = document.querySelector("#fileInput");
@@ -117,7 +118,7 @@
 
             const toast = document.querySelector(".toast");
 
-            const baseURL = "https://shareit-js.herokuapp.com/";
+            const baseURL = 'http://localhost:3000' //"https://shareit-js.herokuapp.com/";
             const uploadURL = `${baseURL}/api/files`;
             const emailURL = `${baseURL}/api/files/send`;
 
@@ -183,7 +184,7 @@
 
                 files = fileInput.files;
                 const formData = new FormData();
-                formData.append("myfile", files[0]);
+                formData.append("file", files[0]);
 
                 //show the uploader
                 progressContainer.style.display = "block";
