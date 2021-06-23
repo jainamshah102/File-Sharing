@@ -1,6 +1,7 @@
 import path from "path";
 
 import express from "express";
+import cors from 'cors';
 
 import ConnectDB from "./services/MongoDB";
 import HomeRouter from './routes/home';
@@ -13,6 +14,7 @@ const PORT: string | number = process.env.PORT || 3000;
 
 ConnectDB();
 
+app.use(cors({ origin: '*' }))
 
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');

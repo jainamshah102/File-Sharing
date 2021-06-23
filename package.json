@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jainam2385/File-Sharing#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
@@ -28,6 +29,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.10",
     "@types/dotenv": "^8.2.0",
     "@types/ejs": "^3.0.6",
     "@types/express": "^4.17.12",

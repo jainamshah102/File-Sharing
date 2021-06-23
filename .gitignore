@@ -103,5 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-# # Uploaded files
-# uploads
+# Uploaded files
+uploads/*
+!uploads/.gitkeep
